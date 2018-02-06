@@ -1,0 +1,16 @@
+{
+  "pages": [
+    {
+      "idName": "home",
+      "page": "pages/index.html",
+      "css": [
+        "css/common.css",
+        "css/home.css"
+      ],
+      "js": [
+        "js/libs/jquery-1.11.3.js",
+        "js/pages/home.js"
+      ]
+    }
+  ]
+}

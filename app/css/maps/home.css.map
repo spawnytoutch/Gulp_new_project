@@ -1,0 +1,1 @@
+{"version":3,"file":"../home.css","sources":["home.scss","import/_variables.scss"],"sourcesContent":["@import \"import/variables\";","$black: #000000;"],"names":[],"mappings":""}

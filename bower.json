@@ -1,0 +1,26 @@
+{
+  "name": "Gulp_base",
+  "description": "New Gulp for basics projects",
+  "main": "index.js",
+  "authors": [
+    "__"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "Gulp",
+    "Scss",
+    "CSSComb"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "susy": "^2.2.12",
+    "compass-mixins": "^1.0.2"
+  }
+}
