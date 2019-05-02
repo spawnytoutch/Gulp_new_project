@@ -1,6 +1,6 @@
 'use strict';
 
-var gulp = require('gulp'),
+const gulp = require('gulp'),
 	duration = require('gulp-duration'),
 	sass = require('gulp-sass'),
 	sourcemaps = require('gulp-sourcemaps'),
@@ -29,8 +29,8 @@ gulp.task('watch', function() {
 	livereload.listen();
 
 	gulp.watch('./app/scss/**/*.scss').on('change', function(file) {
-		var baseFilePath = file.path.replace('/scss/', '/css/');
-		var tmpBaseFilePath = baseFilePath.split('/');
+		let baseFilePath = file.path.replace('/scss/', '/css/');
+		let tmpBaseFilePath = baseFilePath.split('/');
 		tmpBaseFilePath.pop();
 		baseFilePath = tmpBaseFilePath.join('/');
 		gulp.src(file.path)
@@ -46,15 +46,15 @@ gulp.task('watch', function() {
 			// }))
 			.pipe(csscomb())
 			.pipe(gulp.dest(baseFilePath)).on('end', function() {
-				var baseFilePathDest = file.path.replace(__dirname + '/app', '').replace('/scss/', 'css/').replace('.scss', '.css');
-				var buildCSS = JSON.parse(fs.readFileSync('./pages.json', 'utf8'));
-				for (var i = buildCSS.pages.length - 1; i >= 0; i--) {
-					var objCSS = buildCSS.pages[i]['css'];
-					var objCSSIdName = buildCSS.pages[i].idName;
+				let baseFilePathDest = file.path.replace(__dirname + '/app', '').replace('/scss/', 'css/').replace('.scss', '.css');
+				let buildCSS = JSON.parse(fs.readFileSync('./pages.json', 'utf8'));
+				for (let i = buildCSS.pages.length - 1; i >= 0; i--) {
+					let objCSS = buildCSS.pages[i]['css'];
+					let objCSSIdName = buildCSS.pages[i].idName;
 					if (_.includes(objCSS, baseFilePathDest)) {
 						
-						var objCSStmp = [];
-						for (var o = objCSS.length - 1; o >= 0; o--) {
+						let objCSStmp = [];
+						for (let o = objCSS.length - 1; o >= 0; o--) {
 							objCSStmp.unshift(__dirname + '/app/'+objCSS[o]);
 						}
 
@@ -71,8 +71,8 @@ gulp.task('watch', function() {
 	});
 
 	gulp.watch('./app/pages/**/*.html').on('change', function(file) {
-		var destFilePath = file.path.replace('/scss/', '/css/');
-		var destaseFilePath = destFilePath.split('/');
+		let destFilePath = file.path.replace('/scss/', '/css/');
+		let destaseFilePath = destFilePath.split('/');
 		destaseFilePath.pop();
 		destFilePath = destaseFilePath.join('/');
 		destFilePath = destFilePath.replace(__dirname + '/app/', '')
@@ -91,15 +91,15 @@ gulp.task('watch', function() {
 	});
 
 	gulp.watch('./app/js/**/*.js').on('change', function(file) {
-		var baseFilePath = file.path.replace(__dirname + '/app/', '');
-		var buildJS = JSON.parse(fs.readFileSync('./pages.json', 'utf8'));
-		for (var i = buildJS.pages.length - 1; i >= 0; i--) {
-			var objJS = buildJS.pages[i]['js'];
-			var objJSIdName = buildJS.pages[i].idName;
+		let baseFilePath = file.path.replace(__dirname + '/app/', '');
+		let buildJS = JSON.parse(fs.readFileSync('./pages.json', 'utf8'));
+		for (let i = buildJS.pages.length - 1; i >= 0; i--) {
+			let objJS = buildJS.pages[i]['js'];
+			let objJSIdName = buildJS.pages[i].idName;
 			if (_.includes(objJS, baseFilePath)) {
 
-				var objJStmp = [];
-				for (var o = objJS.length - 1; o >= 0; o--) {
+				let objJStmp = [];
+				for (let o = objJS.length - 1;F o >= 0; o--) {
 					objJStmp.unshift(__dirname + '/app/'+objJS[o]);
 				}
 
